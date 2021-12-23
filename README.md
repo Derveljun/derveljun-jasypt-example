@@ -4,7 +4,7 @@
 
 # 예제 Github 주소
 https://github.com/Derveljun/derveljun-jasypt-example
-
+- 서버 구동 후, 테스트 페이지 접근: localhost:18082/swagger-ui.html
 
 # Jasypt란
 
@@ -367,7 +367,7 @@ Properties 값을 가져오는 방법은 여러 방법이 존재합니다.
 
 # 예제 Github 주소
 https://github.com/Derveljun/derveljun-jasypt-example
-
+- 서버 구동 후, 테스트 페이지 접근: localhost:18082/swagger-ui.html
 
 
 
