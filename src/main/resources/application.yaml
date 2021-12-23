@@ -1,0 +1,18 @@
+# Spring Setting
+spring:
+  profiles:
+    default: local
+
+# OpenAPI and Swagger UI
+springdoc:
+  api-docs.path: /v3/api-docs/
+  swagger-ui:
+    operations-sorter: method
+
+# Properties Encryption
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+    property:
+      prefix: ENC(
+      suffix: )

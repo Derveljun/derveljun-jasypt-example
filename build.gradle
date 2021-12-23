@@ -1,0 +1,66 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.derveljun'
+version = '1.0.0'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+
+    // Encryption
+    implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
+    // Encryption
+
+    // API Docs
+    implementation 'org.springdoc:springdoc-openapi:1.5.13'
+    implementation 'org.springdoc:springdoc-openapi-webmvc-core:1.5.13'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.5.13'
+    // API Docs
+
+    // Utils
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    // Utils
+
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'mysql:mysql-connector-java'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+// 기본 application Properties 외에 Profiles별 application-{profiles} 를 인식하기 위한 설정 
+sourceSets {
+    main {
+        resources {
+            srcDirs("src/main/resources", "src/main/resources/profiles")
+        }
+    }
+}
+
+// 기본 application Properties 외에 application 소스가 인식 되었을 때 어떻게 처리할 것인지 처리.
+// DuplicatesStrategy.INCLUDE -> 포함하여 인식
+tasks {
+    processResources {
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

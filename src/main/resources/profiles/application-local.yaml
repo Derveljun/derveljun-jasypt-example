@@ -1,0 +1,11 @@
+server:
+  port: 18082
+
+#
+derveljun:
+  datasource:
+    derveljun-mysql-db:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306
+      username: ENC(qh5AnXwcec5YdYaSng957w==)
+      password: ENC(a+PBo+HKU/7aGVl+oN6iQQ==)
